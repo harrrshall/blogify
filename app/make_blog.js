@@ -1,6 +1,5 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { Groq } from 'groq-sdk';
-import { YoutubeTranscript } from 'youtube-transcript';
 import { MongoClient } from 'mongodb';
 import crypto from 'crypto';
 import chalk from "chalk";
@@ -432,7 +431,11 @@ export async function processYouTubeVideo(videoUrl, blogPostIndex, onProgress) {
 
     const videoId = extractVideoId(videoUrl);
     console.log(chalk.blue(`Fetching transcript for video ID: ${videoId}`));
-    const transcript = await YoutubeTranscript.fetchTranscript(videoId);
+    const response = await fetch(`/api/fetch-transcript?videoId=${videoId}`);
+    if (!response.ok) {
+      throw new Error(`Failed to fetch transcript: ${response.statusText}`);
+    }
+    const transcript = await response.json();
     const fullTranscript = transcript.map(entry => entry.text).join(' ');
     console.log(chalk.green('Transcript fetched successfully'));
     onProgress(10, (Date.now() - startTime) / 1000); // Update progress
