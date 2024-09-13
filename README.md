@@ -1,33 +1,13 @@
-```markdown
 # Podcast-to-Blog Platform
 
 This repository contains a powerful platform designed to automatically transform podcasts into engaging blog posts, enriching content creation and audience engagement. 
 
-## Overview
-
-The platform leverages a combination of cutting-edge technologies:
-
-- **Gemini Pro:**  A state-of-the-art language model from Google AI, used for generating insightful analysis, original angles, and engaging blog outlines.
-- **Groq:** A powerful large language model, utilized for summarizing blog sections concisely.
-- **MongoDB:**  A NoSQL database for efficient caching and data storage, ensuring rapid processing and reduced API calls.
-
-## Features
-
-- **Transcript Fetching:** Automatically retrieves transcripts for YouTube videos through an API.
-- **Intelligent Analysis:** Analyzes transcripts to identify key themes, insights, and memorable quotes.
-- **Original Angle Generation:** Creates unique perspectives from the podcast content tailored to a target audience.
-- **Blog Outline Creation:** Generates a structured outline for the blog post, ensuring logical flow and captivating content.
-- **Blog Section Writing:** Drafts individual sections of the blog post, incorporating analysis, storytelling, and engaging prose.
-- **Section Summarization:** Creates concise summaries for each section, facilitating smooth transitions between parts.
-- **Caching:** Utilizes MongoDB for efficient caching of results, optimizing performance and reducing API costs.
-- **Progress Tracking:** Provides real-time progress updates during processing, keeping you informed throughout the workflow.
 
 ## Installation and Usage
 
 1. **Prerequisites:**
    - Node.js and npm installed.
-   - Google Cloud Platform (GCP) account with a project and API key.
-   - MongoDB instance with a database named 'youtube_analysis_cache'.
+   - Google Gemini API key.
    - A Groq API key.
 
 2. **Environment Variables:**
@@ -65,13 +45,3 @@ async function main() {
     }
   }
 }
-```
-
-## Contributing
-
-Contributions are welcome! Please feel free to open issues or submit pull requests.
-
-## License
-
-This project is licensed under the MIT License. See the `LICENSE` file for more information.
-```
