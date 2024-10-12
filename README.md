@@ -1,4 +1,4 @@
-# Blogift
+# Blogify
 
 This repository contains a powerful platform designed to automatically transform podcasts into engaging blog posts, enriching content creation and audience engagement. 
 
